@@ -185,9 +185,6 @@ HTML_TEMPLATE = '''
     <div class="container">
         <h1>Love Calculator 💖</h1>
         <p class="subtitle">Just a little something I made for you 💖</p>
-        <p style="font-size:12px;color:#bbb;margin-bottom:20px;">
-        Made specially for someone very important ❤️ 
-        </p>
         
         <form id="loveForm">
             <div class="form-group">
