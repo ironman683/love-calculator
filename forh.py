@@ -161,12 +161,33 @@ HTML_TEMPLATE = '''
             background: #e0e0e0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 20px;
+            animation: floatUp 4s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Love Calculator 💖</h1>
         <p class="subtitle">Just a little something I made for you 💖</p>
+        <p style="font-size:12px;color:#bbb;margin-bottom:20px;">
+        Made specially for someone very important ❤️ 
+        </p>
         
         <form id="loveForm">
             <div class="form-group">
@@ -214,6 +235,10 @@ HTML_TEMPLATE = '''
                 document.getElementById('percentage').textContent = data.percentage + '%';
                 document.getElementById('message').textContent = data.message;
                 document.getElementById('result').classList.add('show');
+                for(let i=0;i<20;i++){
+                    createHeart();
+                }
+                
             } catch (error) {
                 alert('Error calculating love percentage. Please try again!');
                 console.error(error);
@@ -226,6 +251,19 @@ HTML_TEMPLATE = '''
             document.getElementById('result').classList.remove('show');
             document.getElementById('name1').focus();
         }
+        
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+        setInterval(createHeart, 800);
     </script>
 </body>
 </html>
