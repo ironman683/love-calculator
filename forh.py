@@ -165,14 +165,14 @@ HTML_TEMPLATE = '''
 <body>
     <div class="container">
         <h1>Love Calculator 💖</h1>
-        <p class="subtitle">Find your perfect match percentage!</p>
+        <p class="subtitle">Just a little something I made for you 💖</p>
         
         <form id="loveForm">
             <div class="form-group">
                 <input type="text" id="name1" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-                <input type="text" id="name2" placeholder="Her Name" required>
+                <input type="text" id="name2" placeholder="His Name" required>
             </div>
             <button type="submit">Calculate Love ❤️</button>
         </form>
@@ -243,18 +243,12 @@ def calculate():
     name2 = data.get('name2', '').strip()
     
     # Generate random love percentage between 70 and 100
-    love_percentage = random.randint(70, 100)
+    love_percentage = 100
     
     # Create result text
     result_text = f"{name1} ❤️ {name2}"
     
-    # Determine message based on love percentage
-    if love_percentage >= 90:
-        message = "Perfect Match 💖"
-    elif love_percentage >= 80:
-        message = "You two are adorable 😍"
-    else:
-        message = "Looks promising 😄"
+    message = "This was never meant to be random... it's always 100% 😙💖"
     
     return jsonify({
         'result_text': result_text,
