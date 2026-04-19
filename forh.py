@@ -165,7 +165,7 @@ HTML_TEMPLATE = '''
 </head>
 <body>
     <div class="container">
-        <h1>Love Calculator 💖</h1>
+        <h1>Love Calculator 💗</h1>
         <p class="subtitle">Just a little something I made for you 💖</p>
         
         <form id="loveForm">
@@ -175,7 +175,7 @@ HTML_TEMPLATE = '''
             <div class="form-group">
                 <input type="text" id="name2" placeholder="His Name" required>
             </div>
-            <button type="submit">Calculate Love ❤️</button>
+            <button type="submit">Calculate Love 💗</button>
         </form>
         
         <div class="result" id="result">
